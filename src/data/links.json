@@ -4,5 +4,11 @@
     "url": "https://www.facebook.com/xxx/",
     "icon": "",
     "active": true
+  },
+  {
+    "name": "twitter",
+    "url": "https://www.x.com/xxx/",
+    "icon": "",
+    "active": true
   }
 ]

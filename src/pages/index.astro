@@ -1,28 +1,29 @@
 ---
 import links from "../data/links.json";
+import profile from "../data/profile.json";
 
 const activeLinks = links.filter((link) => link.active);
 ---
 
-<html lang="en">
+<html lang={profile.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michał Wędzik</title>
+    <title>{profile.pageTitle}</title>
     <meta
       name="description"
-      content="Michał Wędzik - Senior Java Developer"
+      content={profile.description}
     />
   </head>
 
   <body>
     <main class="container">
       <header class="profile">
-        <div class="avatar">MW</div>
+        <div class="avatar">{profile.avatarInitials}</div>
 
-        <h1>Michał Wędzik</h1>
+        <h1>{profile.name}</h1>
 
-        <p>Senior Java Developer</p>
+        <p>{profile.bio}</p>
       </header>
 
       <section class="links">
@@ -48,7 +49,7 @@ const activeLinks = links.filter((link) => link.active);
       </section>
 
       <footer>
-        <span>© {new Date().getFullYear()} Michał Wędzik</span>
+        <span>© {new Date().getFullYear()} {profile.copyrightName}</span>
       </footer>
     </main>
   </body>

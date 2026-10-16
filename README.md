@@ -1,7 +1,7 @@
 # links page
 
 A simple, responsive personal links page.
-Built with Astro, with link data stored in JSON and styling written in plain CSS.
+Built with Astro, with link and profile data stored in JSON and styling written in plain CSS.
 Generates a static site with no backend or database.
 
 **Website:** [text](url)
@@ -32,6 +32,7 @@ Open the URL printed by Astro in your terminal.
 src/
   data/
     links.json        # Link data
+    profile.json      # Profile content and page metadata
   pages/
     index.astro       # Page content, layout, and styles
 astro.config.mjs      # Astro configuration and site URL
@@ -66,12 +67,20 @@ the `order` field. Links open in a new tab.
 
 ## Customizing content and appearance
 
-Edit `src/pages/index.astro`:
+Edit `src/data/profile.json` to change profile content and page metadata:
 
-- Update the page title and search engine description in `<head>`.
-- Change the avatar initials, name, and job title in the `.profile` header.
-- Update the copyright text in `<footer>`; the year is generated at build time.
-- Adjust colors, fonts, width, spacing, and link cards in the `<style>` section.
+| Field | Description |
+| --- | --- |
+| `name` | Name displayed in the profile heading. |
+| `bio` | Short bio or job title displayed below the name. |
+| `avatarInitials` | Initials displayed in the avatar. |
+| `pageTitle` | Page title displayed in the browser tab. |
+| `description` | Page description used by search engines. |
+| `language` | Page language code used in the HTML `lang` attribute. |
+| `copyrightName` | Name displayed in the footer; the year is generated at build time. |
+
+Adjust colors, fonts, width, spacing, and link cards in the `<style>` section
+of `src/pages/index.astro`.
 
 The project does not use a theme library or Tailwind CSS.
 
